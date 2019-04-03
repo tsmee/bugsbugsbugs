@@ -6,73 +6,38 @@
 
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+ <link type="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
 </head>
 
 <body>
 
+
+
     <div class="container">
         <div class="header">
-            <nav>
-                <ul class="nav nav-pills pull-right">
-                    <li role="presentation" class="active"><a href="#">Home</a>
-                    </li>
-                    <li role="presentation"><a href="#">Sign In</a>
-                    </li>
-                    <li role="presentation"><a href="showSignUp">Sign Up</a>
-                    </li>
-                </ul>
-            </nav>
-            <h3 class="text-muted">Python Flask App</h3>
+            <h3 class="text-muted">спешл фор НГУ</h3>
         </div>
 
         <div class="jumbotron" style="background-color:dodgerblue">
-            <h1>Bucket List App</h1>
+            <h1>Закажите обратный звонок!</h1>
             <p class="lead"></p>
-            <p><a class="btn btn-lg btn-success" href="showSignUp" role="button">Sign up today</a>
+            <p>
             </p>
         </div>
 
         <div class="row marketing">
             <div class="col-lg-6">
-                <h4>Bucket List</h4>
-                <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
+                <h4>Заявка на звонок</h4>
+                <p>Пожалуйста, оставьте ваши контактные данные. Наш оператор свяжется с вами в любое удобное для вас время</p>
 
-                <h4>Bucket List</h4>
-                <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
+                <p>Обратите внимание: все поля обязательны для заполнения</p>
 
-                <h4>Bucket List</h4>
-                <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+
             </div>
 
             <div class="col-lg-6">
-                <h4>Bucket List</h4>
-                <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
-
-                <h4>Bucket List</h4>
-                <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
-
-                <h4>Bucket List</h4>
-                <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-            </div>
-        </div>
-
-        <footer class="footer">
-            <form method="POST" role="form" class="form-horizontal">
-    <div class="form-group">
-        <input type="text" class="form-control" name="number1" placeholder="Number1">
-    </div>
-
-    <div class="form-group">
-        <input type="text" class="form-control" name="number2" placeholder="Number2">
-    </div>
-<input type="submit" class="btn btn-default" value="Submit"/>
-</form>
-
-
-
-
-
 {% extends "bootstrap/base.html" %}
 {% import "bootstrap/wtf.html" as wtf %}
 
@@ -84,18 +49,110 @@
 {% endblock %}
 
             {% block content %}
-<form method="POST" role="form" class="form-horizontal" action="/">
+<form method="POST" role="form" class="form-horizontal" action="/succsess">
      <div class="form-group">
     {{ form.hidden_tag() }}
-    {{ form.name.label }} {{ form.name(class="form-control", placeholder="Number3") }}
+    {{ form.name.label }} {{ form.name(class="form-control", placeholder="Иванов") }}
+    {{ form.surname.label }} {{ form.name(class="form-control", placeholder="Иван") }}
+    {{ form.patronymic.label }} {{ form.name(class="form-control", placeholder="Иванович") }}
     {{ form.email.label }} {{ form.email(class="form-control", placeholder="email") }}
     {{ form.date.label }} {{ form.date(class="form-control") }}
-     </div>
-    <input type="submit" class="btn btn-default" value="Go">
-</form>
-{% endblock %}
+    {{ form.phone.label }} {{ form.phone(maxlength=9, class="form-control", placeholder="89991234567") }}
 
-{% block scripts %}
+
+    <br>
+    <input class="btn btn-primary" type="submit" value="Submit">
+</form>
+
+            </div>
+        </div>
+
+
+<!-- Footer -->
+<footer class="page-footer font-small blue pt-4" >
+    <br><br><br><br><br><br>
+
+    <!-- Footer Links -->
+    <div class="container-fluid text-center text-md-left">
+
+      <!-- Grid row -->
+      <div class="row">
+
+        <!-- Grid column -->
+        <div class="col-md-6 mt-md-0 mt-3">
+
+          <!-- Content -->
+          <h5 class="text-uppercase">Footer Content</h5>
+          <p>Here you can use rows and columns here to organize your footer content.</p>
+
+        </div>
+        <!-- Grid column -->
+
+        <hr class="clearfix w-100 d-md-none pb-3">
+
+        <!-- Grid column -->
+        <div class="col-md-3 mb-md-0 mb-3">
+
+            <!-- Links -->
+            <h5 class="text-uppercase">Links</h5>
+
+            <ul class="list-unstyled">
+              <li>
+                <a href="#!">Link 1</a>
+              </li>
+              <li>
+                <a href="#!">Link 2</a>
+              </li>
+              <li>
+                <a href="#!">Link 3</a>
+              </li>
+              <li>
+                <a href="#!">Link 4</a>
+              </li>
+            </ul>
+
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-3 mb-md-0 mb-3">
+
+            <!-- Links -->
+            <h5 class="text-uppercase">Links</h5>
+
+            <ul class="list-unstyled">
+              <li>
+                <a href="#!">Link 1</a>
+              </li>
+              <li>
+                <a href="#!">Link 2</a>
+              </li>
+              <li>
+                <a href="#!">Link 3</a>
+              </li>
+              <li>
+                <a href="#!">Link 4</a>
+              </li>
+            </ul>
+
+          </div>
+          <!-- Grid column -->
+
+      </div>
+      <!-- Grid row -->
+
+    </div>
+    <!-- Footer Links -->
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2016 Copyright:
+      <a href="https://mdbootstrap.com/education/bootstrap/"> ООО МФК Смсфинанс</a>
+    </div>
+    <!-- Copyright -->
+
+  </footer>
+        {% endblock %}
+                {% block scripts %}
   {{ super() }}
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
@@ -105,7 +162,8 @@
     });
   </script>
 {% endblock %}
-        </footer>
+
+  <!-- Footer -->
 
     </div>
 </body>

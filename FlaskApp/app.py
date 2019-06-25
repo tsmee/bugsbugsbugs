@@ -39,7 +39,8 @@ def succsess():
         date = request.form.get('date')
         return render_template('succsess.html', name=name, email=email, date=date)
 
-
-
 if __name__ == "__main__":
     app.run()
+
+
+

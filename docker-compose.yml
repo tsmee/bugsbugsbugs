@@ -1,0 +1,10 @@
+version: '3'
+services:
+  backend:
+    build: docker
+    ports:
+      - 5000:5000
+    volumes:
+      - "./FlaskApp:/opt/app"
+    working_dir: "/opt/app"
+    command: python -u ./app.py

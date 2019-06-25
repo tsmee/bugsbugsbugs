@@ -3,7 +3,7 @@ services:
   backend:
     build: docker
     ports:
-      - 5000:5000
+      - 5000:80
     volumes:
       - "./FlaskApp:/opt/app"
     working_dir: "/opt/app"
